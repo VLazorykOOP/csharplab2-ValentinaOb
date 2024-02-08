@@ -92,7 +92,6 @@ static void task2()
     {
       a[i]= Convert.ToInt32(Console.ReadLine());
     }
-    Console.Write("\nA: ", a);
     int max=0, min =100, k=0,k1=0;
 
     for(int i=0; i<a.Length;i++){
@@ -120,21 +119,38 @@ static void task2()
 }
 static void task3()
 {
-    Console.WriteLine("\nTask3");
+    Console.Write("N1: ");
+    int n1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("N2: ");
+    int n2 = Convert.ToInt32(Console.ReadLine());
+    int [,] a=new int[n1,n2];
 
-    Console.Write("X: ");
-    string? str = Console.ReadLine();
-    Console.Write("Y: ");
-    string? str1 = Console.ReadLine();
-    int x = 0, y=0; 
+    Console.Write("Input array: ");
     
-    if (str != null ) x = int.Parse(str);
-    if (str1 != null ) y = int.Parse(str1);
+    for(int i = 0;i<n1;i++)
+    for(int j = 0;j<n2;j++)
+    {
+      a[i,j]= Convert.ToInt32(Console.ReadLine());
+    }
     
-    
-    if(((x-12)*(0-12)-(y-12)*(0-12)) > 0 && y< 12) Console.WriteLine("Inside ");
-    else if(((x-12)*(0-12)-(y-12)*(0-12)) < 0 || y> 12) Console.WriteLine("Outside ");
-    else Console.WriteLine("Border");
+    // int [,] a={{1,2},{3,4}};
+    int t=0;
+
+    if((n1%2)==0){
+      
+      for(int i = 0;i<n2;i++)
+        for(int j = 0;j<n1;j++)
+        {
+          t=a[i,j];
+          a[i,j]=a[i++,j];
+          a[i++,j]=t;
+       }
+    }
+
+   Console.Write("A: ");
+    for(int i = 0;i<n1;i++)
+    for(int j = 0;j<n2;j++){
+    Console.Write(a[i,j]+" ");}
 
 }
 static void task4()
