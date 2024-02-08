@@ -81,23 +81,27 @@ static void task1()
 static void task2()
 {
     Console.WriteLine("\nTask2");
-    e:
-    Console.Write("Number (1-99): ");
-    string? str = Console.ReadLine();
-    int s = 0, s1, s2, sum=0; 
+    Console.Write("N: ");
+    int n = Convert.ToInt32(Console.ReadLine());
+
+    int [] a=new int[n];
+    int s=0;
+
+    Console.Write("Input array: ");
+    for(int i = 0;i<a.Length;i++)
+    {
+      a[i]= Convert.ToInt32(Console.ReadLine());
+    }
+
+    Console.Write("Start: ");
+    int st = Convert.ToInt32(Console.ReadLine());
+    Console.Write("End: ");
+    int end = Convert.ToInt32(Console.ReadLine());
+
+    for(int i=st; i<end;i++){
+        s+=a[i];
+    }
     
-    if (str != null ) s = int.Parse(str);
-    if ((0<=s) && (s>=100)) goto e;
-
-    s1 = s / 10; 
-    s2 = s % 10;
-
-    sum=s1+s2;
-
-    Console.WriteLine("S1: "+s1+"   S2: "+s2+"   Sum: "+sum+"   A: "+(sum % 2));
-
-    if((sum % 2) == 0) {Console.WriteLine("Result: " + s1+" "+s2+" - Yes\n");}
-    else  {Console.WriteLine("Result: " + s1+" "+s2+" - No\n");}
 
 
 }
