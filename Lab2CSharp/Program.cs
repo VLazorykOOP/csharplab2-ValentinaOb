@@ -138,8 +138,8 @@ static void task3()
 
     if((n1%2)==0){
       
-      for(int i = 0;i<n2;i++)
-        for(int j = 0;j<n1;j++)
+      for(int i = 0;i<n1;i++)
+        for(int j = 0;j<n2;j++)
         {
           t=a[i,j];
           a[i,j]=a[i++,j];
@@ -155,37 +155,30 @@ static void task3()
 }
 static void task4()
 {
-    Console.WriteLine("\nTask4");
+    Console.Write("N1: ");
+    int n1 = Convert.ToInt32(Console.ReadLine());
+    int [,] a=new int[n1,n1];
+    int [] r=new int[n1];
 
-e:
-    Console.Write("M (>0): ");
-    string? str = Console.ReadLine();
-    int m=0, n=0; 
+    Console.Write("Input array: ");
     
-    if (str != null ) m = int.Parse(str);
-    if(m<0)goto e;
-
-    n=-m;
-
-    if(n<0) n*=-1;
-    
-    while (n>11) {n-=12;}
-
-    switch(n){
-      case 1: {Console.WriteLine("January\n"); break;}
-      case 0: {Console.WriteLine("February\n"); break;}
-      case 11: {Console.WriteLine("March\n"); break;}
-      case 10: {Console.WriteLine("April\n"); break;}
-      case 9: {Console.WriteLine("May\n"); break;}
-      case 8: {Console.WriteLine("June\n"); break;}
-      case 7: {Console.WriteLine("July\n"); break;}
-      case 6: {Console.WriteLine("August\n"); break;}
-      case 5: {Console.WriteLine("September\n"); break;}
-      case 4: {Console.WriteLine("October\n"); break;}
-      case 3: {Console.WriteLine("November\n"); break;}
-      case 2: {Console.WriteLine("December\n"); break;}  
+    for(int i = 0;i<n1;i++)
+    for(int j = 0;j<n1;j++)
+    {
+      a[i,j]= Convert.ToInt32(Console.ReadLine());
     }
 
+    for(int i = 0;i<n1;i++)
+    for(int j = 0;j<n1;j++){
+      if((a[i,j]%2)!=0){
+        r[i]=i;
+      }
+    }
+    
+    Console.Write("R: ");
+    for(int i = 0;i<r.Length;i++){
+      Console.Write(r[i]+" ");
+    }
 }
   }
 
