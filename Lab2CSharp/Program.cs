@@ -133,24 +133,36 @@ static void task3()
       a[i,j]= Convert.ToInt32(Console.ReadLine());
     }
     
-    // int [,] a={{1,2},{3,4}};
+    // int [,] a={{1,2,3},{4,5,6},{7,8,9},{10,11,12}};
     int t=0;
+    int k=0;
 
     if((n1%2)==0){
       
-      for(int i = 0;i<n1;i++)
+      for(int i = 0;i<n1;i++){
         for(int j = 0;j<n2;j++)
         {
+          if(k==3){k=0; break;}
+          k+=1;
           t=a[i,j];
-          a[i,j]=a[i++,j];
-          a[i++,j]=t;
+          a[i,j]=a[i+1,j];
+          a[i+1,j]=t;
+          Console.Write("\nA:"+ a[i,j]);
+          Console.Write("\nA+:"+ a[i+1,j]);
        }
+      }
     }
 
-   Console.Write("A: ");
+   Console.Write("\n\nA: ");
     for(int i = 0;i<n1;i++)
     for(int j = 0;j<n2;j++){
-    Console.Write(a[i,j]+" ");}
+      if(k==3) {
+        k=0; 
+        Console.Write("\n   ");
+      }
+    Console.Write(a[i,j]+" ");
+    k+=1;
+    }
 
 }
 static void task4()
