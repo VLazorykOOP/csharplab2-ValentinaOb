@@ -181,13 +181,15 @@ static void task4()
     }
 
     for(int i = 0;i<n1;i++)
-    for(int j = 0;j<n1;j++){
+    for(int j = 0;j<n1;j++)
+    {
       if((a[i,j]%2)!=0){
-        r[i]=i;
+        r[i]=j;
+         Console.Write("\nR: "+i+"   A: "+a[i,j]);
       }
     }
     
-    Console.Write("R: ");
+    Console.Write("\nR: ");
     for(int i = 0;i<r.Length;i++){
       Console.Write(r[i]+" ");
     }
