@@ -180,14 +180,14 @@ static void task4()
       a[i,j]= Convert.ToInt32(Console.ReadLine());
     }
 
+  for(int j = 0;j<n1;j++){
     for(int i = 0;i<n1;i++)
-    for(int j = 0;j<n1;j++)
     {
       if((a[i,j]%2)!=0){
-        r[i]=j;
+        r[j]=j;
          Console.Write("\nR: "+i+"   A: "+a[i,j]);
       }
-    }
+    }}
     
     Console.Write("\nR: ");
     for(int i = 0;i<r.Length;i++){
