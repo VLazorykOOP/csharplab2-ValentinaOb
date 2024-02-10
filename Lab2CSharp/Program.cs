@@ -63,10 +63,10 @@ static void task1()
 
     Console.Write("Start i: ");
     int st1 = Convert.ToInt32(Console.ReadLine());
-    Console.Write("Start j: ");
-    int st2 = Convert.ToInt32(Console.ReadLine());
     Console.Write("End i: ");
     int end1 = Convert.ToInt32(Console.ReadLine());
+    Console.Write("Start j: ");
+    int st2 = Convert.ToInt32(Console.ReadLine());
     Console.Write("End j: ");
     int end2 = Convert.ToInt32(Console.ReadLine());
 
@@ -111,7 +111,7 @@ static void task2()
     if(k>k1) {Console.Write("\nMin...Max");}
 
     else{
-      for(int i=k; i<k1;i++){
+      for(int i=k+1; i<k1;i++){
       s+=a[i];
       }
       Console.Write("\nS: "+ s+ "\n");
