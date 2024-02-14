@@ -175,12 +175,12 @@ static void task4()
     Console.Write("Input array: ");
     
     for(int i = 0;i<n1;i++)
-    {a[i] = new int[n1];
-
-    for(int j = 0;j<n1;j++)
     {
+      a[i] = new int[n1];
+      for(int j = 0;j<n1;j++){
       a[i][j]= int.Parse(Console.ReadLine());
-    }}
+      }
+    }
 
   for(int j = 0;j<n1;j++){
     for(int i = 0;i<n1;i++)
